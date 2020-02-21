@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>钟表</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="400"></canvas>
+	</body>
+	<script type="text/javascript">
+		var c = document.getElementById('myCanvas')
+		var ctx = c.getContext('2d')
+		
+		
+		ctx.beginPath()
+		ctx.strokeStyle='black'
+		ctx.translate(c.width/2,c.height/2)
+		// ctx.moveTo(0,-100)
+		ctx.arc(0,0,150,0,2*Math.PI)
+		ctx.stroke()
+		
+		ctx.beginPath()
+		ctx.lineWidth=1
+		ctx.strokeStyle="green"
+		for(let i = 1 ;i <= 60; i++){
+			ctx.rotate(2*Math.PI/60)
+			ctx.moveTo(0,-130)
+			ctx.lineTo(0,-140)
+			ctx.stroke()
+		}
+		
+		ctx.beginPath()
+		ctx.lineWidth=4
+		ctx.strokeStyle="blue"
+		for(let i = 1 ;i <= 12; i++){
+			ctx.rotate(2*Math.PI/12)
+			ctx.moveTo(0,-120)
+			ctx.lineTo(0,-140)
+			ctx.stroke()
+		}
+		
+		// ctx.beginPath()
+		// ctx.lineWidth=2
+		// ctx.strokeStyle="black"
+		// setTimeout(()=>{
+		// 	ctx.clearRect()
+		// },1000)
+	</script>
+	<style type="text/css">
+		#myCanvas{
+			border: 1px solid red;
+		}
+	</style>
+</html>
